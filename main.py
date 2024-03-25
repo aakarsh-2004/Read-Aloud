@@ -4,16 +4,16 @@ from gtts import gTTS
 from playsound import playsound
 import os
 
-# Specifying the paths
-file = "C:/Pen Projects/Read Aloud/file.txt"
-sound = "C:/Pen Projects/Read Aloud/output.mp3"
+# Specifying the paths (Edit it)
+file = "path_to_file"
+sound = "path_to_sound"
 
 # Checking if the file already exists
 my_file = open(file, "r")
 if my_file:
     playsound(sound)
 else:
-    with open(file, "r") as f:
+    with open(file, "r+") as f:
         text = f.read();
         speech = gTTS(text=text, lang='en')
         speech.save("output.mp3")
